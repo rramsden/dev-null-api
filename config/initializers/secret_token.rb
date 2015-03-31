@@ -16,4 +16,4 @@
 # Using secret_token for rails3 compatibility. Change to secret_key_base
 # to avoid deprecation warning.
 # Can be safely removed in a rails3 api-only application.
-DevNullApi::Application.config.secret_token = '1b09f3695fb362a4601ff3ccd8079843daf1069b1bf9c978fa561de3b036dd0410982e572d6fc3520b51fa75b9daf8a371524eb308cef8ce772cc79cddcffed4'
+LolStorage::Application.config.secret_token = '1b09f3695fb362a4601ff3ccd8079843daf1069b1bf9c978fa561de3b036dd0410982e572d6fc3520b51fa75b9daf8a371524eb308cef8ce772cc79cddcffed4'
