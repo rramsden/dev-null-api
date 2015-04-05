@@ -1,14 +1,17 @@
 source 'https://rubygems.org'
 
-
 gem 'rails', '4.1.9'
-
 gem 'rails-api'
-
-gem 'spring', :group => :development
-
 gem 'active_model_serializers'
+gem 'sqlite3'
 
-group :development do
+# JSON Schema generation
+gem 'prmd'
+gem 'json-schema'
+
+group :development, :test do
+  gem "rspec-rails"
   gem "pry"
+  gem "spring"
+  gem "factory_girl_rails"
 end

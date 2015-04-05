@@ -1,3 +1,4 @@
 Rails.application.routes.draw do
-  resources :storage, only: [:create, :show, :update, :destroy]
+  get "/schema" => "schema#index"
+  resources :storage
 end

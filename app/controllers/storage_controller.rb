@@ -1,5 +1,6 @@
 class StorageController < ActionController::Base
   def index
+    render json: Storage.all, root: false
   end
 
   def show
@@ -8,28 +9,17 @@ class StorageController < ActionController::Base
     if storage
       render json: storage
     else
-      render json: {message: "wat"}, status: 404
+      render json: {message: "Record not found"}, status: 404
     end
   end
 
   def create
-    storage = Storage.find(params[:id])
+    storage = Storage.new(key: params[:key], value: params[:value])
 
-    if storage.valid?
-      render json: {message: "kthxbai"}
-    else
-      render json: {message: "wat"}, status: 422
-    end
-  end
-
-  def update
-    storage = Storage.find(params[:id])
-    storage.data = params[:data]
-
-    if storage
+    if storage.save
       render json: storage
     else
-      render json: {message: "wat"}, status: 404
+      render json: {message: "Record invalid"}, status: 422
     end
   end
 
@@ -37,9 +27,9 @@ class StorageController < ActionController::Base
     storage = Storage.find(params[:id])
 
     if storage
-      render json: {message: "wat"}
+      render json: storage
     else
-      render json: {message: "wat"}, status: 404
+      render json: {message: "Record not found"}, status: 404
     end
   end
 end

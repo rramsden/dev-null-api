@@ -1,0 +1,67 @@
+{
+  "$schema": "http://json-schema.org/draft-04/hyper-schema",
+  "title": "Storage endpoint",
+  "description": "This is the storage resource. It's the main endpoint for lolstorage.",
+  "type": "object",
+  "id": "storage",
+  "definitions": {
+    "key": {
+      "description": "The storage key",
+      "example": "key",
+      "readOnly": true,
+      "type": "string"
+    },
+    "value": {
+      "description": "The storage value",
+      "example": "value",
+      "type": "string"
+    },
+    "created_at": {
+      "description": "An iso8601 formatted time the key was stored.",
+      "example": "2015-03-06T06:52:35Z",
+      "format": "date-time",
+      "type": "string"
+    }
+  },
+  "links": [
+    {
+      "title": "Show",
+      "description": "Show a record in storage",
+      "href": "/storage/{(%23%2Fdefinitions%2Fstorage%2Fdefinitions%2Fkey)}",
+      "method": "GET",
+      "rel": "self"
+    },
+    {
+      "title": "Create",
+      "description": "Create a record in storage",
+      "href": "/storage",
+      "method": "POST",
+      "rel": "create",
+      "schema": {
+        "$ref": "/storage#/"
+      }
+    },
+    {
+      "title": "Destroy",
+      "description": "Destroy a record in storage",
+      "href": "/storage/{(%23%2Fdefinitions%2Fstorage%2Fdefinitions%2Fkey)}",
+      "method": "DELETE",
+      "rel": "destroy"
+    }
+  ],
+  "properties": {
+    "key": {
+      "$ref": "/storage#/definitions/key"
+    },
+    "value": {
+      "$ref": "/storage#/definitions/value"
+    },
+    "created_at": {
+      "$ref": "/storage#/definitions/created_at"
+    }
+  },
+  "required": [
+    "key",
+    "value"
+  ]
+}
