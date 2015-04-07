@@ -6,41 +6,45 @@
     },
     "response_data": {
       "trash": [
-        "/Users/richardramsden/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/specifications/dotenv-0.8.0.gemspec"
+        "Todd_Joseph",
+        "application/vnd.msign",
+        "Stringprep",
+        "david@loudthinking.com",
+        "http://interagent.github.io/interagent-hyper-schema"
       ]
     },
-    "code": 200
+    "head": 200
   },
   "trash#create": {
     "verb": "POST",
     "path": "/trash",
     "request_data": {
-      "key": "key",
-      "value": "value"
+      "filename": "filename",
+      "data": "value"
     },
     "response_data": {
       "message": "kthxbai"
     },
-    "code": 200
+    "head": 200
   },
   "trash#show": {
     "verb": "GET",
-    "path": "/trash/key",
+    "path": "/trash/filename",
     "request_data": {
     },
     "response_data": {
       "message": "It's pitch black. You are likely to be eaten by a grue.\n/trash/2 - Light a torch.\n/trash/3 - Stumble around until you find a way out."
     },
-    "code": 200
+    "head": 200
   },
   "trash#destroy": {
     "verb": "DELETE",
-    "path": "/trash/key",
+    "path": "/trash/filename",
     "request_data": {
     },
     "response_data": {
       "message": "kthxbai"
     },
-    "code": 200
+    "head": 200
   }
 }

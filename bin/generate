@@ -1,6 +1,7 @@
 #!/usr/bin/env ruby
 require 'bundler/setup'
 require 'prmd'
+require 'pry'
 
 schema_path = File.join(File.dirname(__FILE__), "../doc/schema")
 schema = Prmd.combine(

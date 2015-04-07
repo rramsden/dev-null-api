@@ -9,25 +9,25 @@ RSpec.describe "trash endpoint", type: :request do
 
   describe "POST /trash" do
     it "creates a new record" do
-      post "/trash", key: "key", value: "value"
+      post "/trash", filename: "filename", data: "value"
 
-      # expect(response).to match_response_schema("trash")
+      expect(response).to match_response_schema("trash")
     end 
   end
 
   describe "GET /trash/:id" do
     it "retreives a record in trash" do
-      get "/trash/key"
+      get "/trash/filename"
 
-      # expect(response).to match_response_schema("trash")
+      expect(response).to match_response_schema("trash")
     end  
   end
 
   describe "DELETE /trash/:id" do
     it "deletes a record from trash" do
-      delete "/trash/key"
+      delete "/trash/filename"
 
-      # expect(response).to match_response_schema("trash")
+      expect(response).to match_response_schema("trash")
     end 
   end
 

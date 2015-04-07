@@ -1,9 +1,9 @@
 {
-  "title": "lolstorage API",
-  "description": "An experimental API to demonstrate the JSON Schema with Hyperschema.",
-  "id": "lolstorage",
+  "title": "/dev/null API",
+  "description": "An experimental API to demonstrate living documentation.",
+  "id": "devnull",
   "links": [{
-    "href": "http://lolstorage.herokuapp.com/",
+    "href": "http://dev-null.herokuapp.com",
     "rel": "self"
   }]
 }

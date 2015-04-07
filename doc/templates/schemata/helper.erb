@@ -126,12 +126,17 @@
     [key, type, description, example]
   end
 
+  def load_example(key)
+    resource = key.match(/^([a-z]+)/)[0]
+    example_path = File.dirname(__FILE__) + "/../../schema/examples/#{resource}.json"
+    JSON.parse(File.read(example_path))[key]
+  end
 
   def build_link_path(schema, link)
     link['href'].gsub(%r|(\{\([^\)]+\)\})|) do |ref|
       ref = ref.gsub('%2F', '/').gsub('%23', '#').gsub(%r|[\{\(\)\}]|, '')
       ref_resource = ref.split('#/definitions/').last.split('/').first.gsub('-','_')
-      identity_key, identity_value = schema.dereference(ref)
+      identity_key, identity_value = schema.dereference("#" + ref)
       if identity_value.has_key?('anyOf')
         '{' + ref_resource + '_' + identity_value['anyOf'].map {|r| r['$ref'].split('/').last}.join('_or_') + '}'
       else

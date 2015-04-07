@@ -19,3 +19,16 @@
 <%- extract_attributes(schema, schemata['properties']).each do |(key, type, description, example)| %>
 | **<%= key %>** | *<%= type %>* | <%= description %> | <%= example %> |
 <%- end %>
+
+<%- schemata['links'].each do |link, datum| %>
+<%=
+  Prmd::Template.render('schemata/link.md.erb', options[:template], {
+    options:         options,
+    resource:        resource,
+    schema:          schema,
+    schemata:        schemata,
+    link:            link,
+    title:           title
+  })
+%>
+<%- end %>

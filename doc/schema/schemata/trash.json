@@ -1,7 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-04/hyper-schema",
-  "title": "trash endpoint",
-  "description": "This is the trash resource. You can store trash here.",
+  "title": "Trash",
+  "description": "This is the trash resource. You can store important things here.",
   "type": "object",
   "id": "trash",
   "definitions": {
@@ -16,41 +16,51 @@
       "example": "!!! LARGE BINARY DATA !!!"
     },
     "message": {
+      "type": "string",
       "description": "A message",
-      "example": "kthxbai",
-      "type": "integer"
+      "example": "kthxbai"
     }
   },
   "links": [
     {
-      "title": "Show",
-      "description": "Show items in trash",
+      "title": "List",
+      "description": "Returns random strings from ruby's ObjectSpace",
       "href": "/trash",
+      "example": "trash#index",
       "method": "GET",
       "rel": "instances"
     },
     {
       "title": "Show",
-      "description": "Show an item in trash",
-      "href": "/trash/{(%23%2Fdefinitions%2Ftrash%2Fdefinitions%2Fkey)}",
+      "description": "Returns a text-based adventure game.",
+      "href": "/trash/{(%23%2Fdefinitions%2Ftrash%2Fdefinitions%2Ffilename)}",
+      "example": "trash#show",
       "method": "GET",
+      "targetSchema": {
+        "$ref": "/trash#/"
+      },
       "rel": "self"
     },
     {
       "title": "Create",
-      "description": "Create a record in trash",
+      "description": "Uploads your trash to the cloud.",
       "href": "/trash",
+      "example": "trash#create",
       "method": "POST",
       "rel": "create",
-      "schema": {
+      "targetSchema": {
         "$ref": "/trash#/"
       }
     },
     {
       "title": "Destroy",
-      "description": "Destroy a record in trash",
-      "href": "/trash/{(%23%2Fdefinitions%2Fstorage%2Fdefinitions%2Fkey)}",
+      "description": "Does absolutely nothing.",
+      "href": "/trash/{(%23%2Fdefinitions%2Ftrash%2Fdefinitions%2Ffilename)}",
+      "example": "trash#destroy",
       "method": "DELETE",
+      "targetSchema": {
+        "$ref": "/trash#/"
+      },
       "rel": "destroy"
     }
   ],
@@ -64,5 +74,8 @@
     "message": {
       "$ref": "/trash#/definitions/message"
     }
-  }
+  },
+  "required": [
+    "message"
+  ]
 }

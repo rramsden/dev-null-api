@@ -14,7 +14,7 @@ RSpec.configure do |config|
         "path" => request.path,
         "request_data" => request.request_parameters,
         "response_data" => JSON.parse(response.body),
-        "code" => response.status
+        "head" => response.status
       }
 
       output = {}
