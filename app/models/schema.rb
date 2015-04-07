@@ -14,6 +14,10 @@ class Schema
     @schema
   end
 
+  def schema
+    @schema
+  end
+
   def to_json
     JSON.pretty_generate(@schema)
   end

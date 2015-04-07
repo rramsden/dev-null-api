@@ -1,3 +1,22 @@
-# lolstorage
+# /dev/null as a service
 
-![image](https://cloud.githubusercontent.com/assets/82835/6919432/db73f59c-d7f1-11e4-874f-79b13125704a.png)
+-----
+
+This is an example repository showing how to generate documentation.
+
+## API Reference
+
+-----
+
+## trash endpoint
+
+This is the trash resource. You can store trash here.
+
+### Attributes
+
+| Name | Type | Description | Example |
+| ------- | ------- | ------- | ------- |
+| **filename** | *string* | The name of the file being trashed. | `"pictures_of_myself.zip"` |
+| **data** | *string* | The data you want to trash in our distributed trash cloud. | `"!!! LARGE BINARY DATA !!!"` |
+| **message** | *integer* | A message | `"kthxbai"` |
+

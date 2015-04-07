@@ -1,66 +1,68 @@
 {
   "$schema": "http://json-schema.org/draft-04/hyper-schema",
-  "title": "Storage endpoint",
-  "description": "This is the storage resource. It's the main endpoint for lolstorage.",
+  "title": "trash endpoint",
+  "description": "This is the trash resource. You can store trash here.",
   "type": "object",
-  "id": "storage",
+  "id": "trash",
   "definitions": {
-    "key": {
-      "description": "The storage key",
-      "example": "key",
-      "type": "string"
+    "filename": {
+      "type": "string",
+      "description": "The name of the file being trashed.",
+      "example": "pictures_of_myself.zip"
     },
-    "value": {
-      "description": "The storage value",
-      "example": "value",
-      "type": "string"
+    "data": {
+      "type": "string",
+      "description": "The data you want to trash in our distributed trash cloud.",
+      "example": "!!! LARGE BINARY DATA !!!"
     },
-    "created_at": {
-      "description": "An iso8601 formatted time the key was stored.",
-      "example": "2015-03-06T06:52:35Z",
-      "format": "date-time",
-      "type": "string"
+    "message": {
+      "description": "A message",
+      "example": "kthxbai",
+      "type": "integer"
     }
   },
   "links": [
     {
       "title": "Show",
-      "description": "Show a record in storage",
-      "href": "/storage/{(%23%2Fdefinitions%2Fstorage%2Fdefinitions%2Fkey)}",
+      "description": "Show items in trash",
+      "href": "/trash",
+      "method": "GET",
+      "rel": "instances"
+    },
+    {
+      "title": "Show",
+      "description": "Show an item in trash",
+      "href": "/trash/{(%23%2Fdefinitions%2Ftrash%2Fdefinitions%2Fkey)}",
       "method": "GET",
       "rel": "self"
     },
     {
       "title": "Create",
-      "description": "Create a record in storage",
-      "href": "/storage",
+      "description": "Create a record in trash",
+      "href": "/trash",
       "method": "POST",
       "rel": "create",
       "schema": {
-        "$ref": "/storage#/"
+        "$ref": "/trash#/"
       }
     },
     {
       "title": "Destroy",
-      "description": "Destroy a record in storage",
-      "href": "/storage/{(%23%2Fdefinitions%2Fstorage%2Fdefinitions%2Fkey)}",
+      "description": "Destroy a record in trash",
+      "href": "/trash/{(%23%2Fdefinitions%2Fstorage%2Fdefinitions%2Fkey)}",
       "method": "DELETE",
       "rel": "destroy"
     }
   ],
   "properties": {
-    "key": {
-      "$ref": "/storage#/definitions/key"
+    "filename": {
+      "$ref": "/trash#/definitions/filename"
     },
-    "value": {
-      "$ref": "/storage#/definitions/value"
+    "data": {
+      "$ref": "/trash#/definitions/data"
     },
-    "created_at": {
-      "$ref": "/storage#/definitions/created_at"
+    "message": {
+      "$ref": "/trash#/definitions/message"
     }
-  },
-  "required": [
-    "key",
-    "value"
-  ]
+  }
 }

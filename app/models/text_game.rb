@@ -1,13 +1,13 @@
 class TextGame
   class << self
     def render(key)
-      section = config[key] ? config[key] : config["default"]
+      section = config[key] ? config[key] : config[1]
       message = section["message"]
       choices = if section["choices"].nil?
         "You have died..."
       else
         section["choices"].collect do |k, v|
-          "#{k} - #{v}"
+          "/trash/#{k} - #{v}"
         end.join("\n")
       end
 

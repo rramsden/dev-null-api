@@ -1,0 +1,23 @@
+# /dev/null as a service
+
+-----
+
+This is an example repository showing how to generate documentation.
+
+## API Reference
+
+-----
+
+<%=
+  schemata_template = Prmd::Template::load('schemata.md.erb', options[:template])
+
+  schema['properties'].map do |resource, property|
+    _, schemata = schema.dereference(property)
+    schemata_template.result({
+      options: options,
+      resource: resource,
+      schema: schema,
+      schemata: schemata
+    })
+  end.join("\n")
+%>

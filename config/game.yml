@@ -1,10 +1,10 @@
 ---
-default:
+1:
   message: "It's pitch black. You are likely to be eaten by a grue."
   choices:
-    1: "Light a torch."
-    2: "Stumble around until you find a way out."
-1:
-  message: "You light a torch only to realize this is the worst text-based game implementation ever..."
+    2: "Light a torch."
+    3: "Stumble around until you find a way out."
 2:
+  message: "You light a torch only to realize this is the worst text-based game implementation ever..."
+3:
   message: "Stumbling around you hear a growl in the distance... You panic and start to run, then slip.. *swoosh* you begin to fall... *BANG*"

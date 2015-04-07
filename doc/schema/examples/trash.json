@@ -4,12 +4,11 @@
     "path": "/trash",
     "request_data": {
     },
-    "response_data": [
-      "{application/vnd.powerbuilder7=http://www.iana.org/assignments/media-types/application/vnd.powerbuilder7}",
-      "block in all_helpers_from_path",
-      "application",
-      "rfc1767"
-    ],
+    "response_data": {
+      "trash": [
+        "/Users/richardramsden/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/specifications/dotenv-0.8.0.gemspec"
+      ]
+    },
     "code": 200
   },
   "trash#create": {
@@ -30,7 +29,7 @@
     "request_data": {
     },
     "response_data": {
-      "message": "It's pitch black. You are likely to be eaten by a grue.\n1 - Light a torch.\n2 - Stumble around until you find a way out."
+      "message": "It's pitch black. You are likely to be eaten by a grue.\n/trash/2 - Light a torch.\n/trash/3 - Stumble around until you find a way out."
     },
     "code": 200
   },

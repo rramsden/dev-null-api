@@ -1,9 +1,8 @@
 class Trash
   include ActiveModel::Model
-  include ActiveModel::SerializerSupport
 
   def self.all
-    rand(10).times.collect { |n| im_feeling_lucky }
+    {trash: rand(20).times.collect { |n| im_feeling_lucky }}
   end
 
   def self.im_feeling_lucky

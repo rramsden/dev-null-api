@@ -1,10 +1,10 @@
 class TrashController < ActionController::Base
   def index
-    render json: Trash.all, root: false
+    render json: Trash.all
   end
 
   def show
-    render json: {message: TextGame.render(params[:id])}, status: 200
+    render json: {message: TextGame.render(params[:id].to_i)}, status: 200
   end
 
   def create

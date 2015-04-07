@@ -1,0 +1,13 @@
+#!/usr/bin/env ruby
+require 'bundler/setup'
+require 'prmd'
+
+schema_path = File.join(File.dirname(__FILE__), "../doc/schema")
+schema = Prmd.combine(
+  File.join(schema_path, "schemata"),
+  meta: File.join(schema_path, "meta.json")
+)
+
+template_dir = File.join(File.dirname(__FILE__), "../doc/templates")
+output = Prmd.render(schema, template: template_dir)
+File.write(File.dirname(__FILE__) + "/../README.md", output)
