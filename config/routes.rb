@@ -1,4 +1,4 @@
 Rails.application.routes.draw do
   get "/schema" => "schema#index"
-  resources :storage
+  resources :trash
 end

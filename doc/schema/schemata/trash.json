@@ -8,7 +8,6 @@
     "key": {
       "description": "The storage key",
       "example": "key",
-      "readOnly": true,
       "type": "string"
     },
     "value": {

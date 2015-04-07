@@ -4,7 +4,7 @@ class TextGame
       section = config[key] ? config[key] : config["default"]
       message = section["message"]
       choices = if section["choices"].nil?
-        "You have died... Thanks for playing!"
+        "You have died..."
       else
         section["choices"].collect do |k, v|
           "#{k} - #{v}"

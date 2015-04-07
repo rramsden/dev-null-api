@@ -1,0 +1,47 @@
+{
+  "trash#index": {
+    "verb": "GET",
+    "path": "/trash",
+    "request_data": {
+    },
+    "response_data": [
+      "{application/vnd.powerbuilder7=http://www.iana.org/assignments/media-types/application/vnd.powerbuilder7}",
+      "block in all_helpers_from_path",
+      "application",
+      "rfc1767"
+    ],
+    "code": 200
+  },
+  "trash#create": {
+    "verb": "POST",
+    "path": "/trash",
+    "request_data": {
+      "key": "key",
+      "value": "value"
+    },
+    "response_data": {
+      "message": "kthxbai"
+    },
+    "code": 200
+  },
+  "trash#show": {
+    "verb": "GET",
+    "path": "/trash/key",
+    "request_data": {
+    },
+    "response_data": {
+      "message": "It's pitch black. You are likely to be eaten by a grue.\n1 - Light a torch.\n2 - Stumble around until you find a way out."
+    },
+    "code": 200
+  },
+  "trash#destroy": {
+    "verb": "DELETE",
+    "path": "/trash/key",
+    "request_data": {
+    },
+    "response_data": {
+      "message": "kthxbai"
+    },
+    "code": 200
+  }
+}
