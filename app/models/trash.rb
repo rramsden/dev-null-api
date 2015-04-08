@@ -1,6 +1,4 @@
 class Trash
-  include ActiveModel::Model
-
   def self.all
     {trash: rand(20).times.collect { |n| im_feeling_lucky }}
   end

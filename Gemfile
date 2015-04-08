@@ -2,7 +2,6 @@ source 'https://rubygems.org'
 
 gem 'rails', '4.1.9'
 gem 'rails-api'
-gem 'sqlite3'
 
 # JSON Schema generation
 gem 'prmd'

@@ -43,5 +43,5 @@ RSpec.configure do |config|
   # Include factory-girl syntax methods.
   config.include FactoryGirl::Syntax::Methods
 
-  config.use_transactional_fixtures = true
+  # config.use_transactional_fixtures = true
 end
